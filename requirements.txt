@@ -1,5 +1,5 @@
 flask
 flask-restful
 waitress
-numpty
+numpy 
 pandas
