@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from waitress import serve
-import pandas as pd
 import os
 
 app = Flask(__name__)
