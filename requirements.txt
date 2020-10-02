@@ -2,4 +2,4 @@ flask
 flask-restful
 waitress
 numpy 
-pandas
+pandas2
