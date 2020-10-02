@@ -1,5 +1,7 @@
 FROM python:3.6-slim-buster
 WORKDIR /app
 COPY . .
-RUN pip install -r requirements.txt
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+RUN pip3 install -r requirements.txt
+EXPOSE 5000
+ENTRYPOINT ["waitress-serve"]
+CMD ["--port=5000", "final_1:app"]
