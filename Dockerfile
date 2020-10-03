@@ -1,8 +1,8 @@
-FROM python:3.6-slim-buster
+FROM python:3.8.6-slim
 ENV PYTHONUNBUFFERED True
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
-RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD exec waitress-serve --listen=*:5000 app:api
+WORKDIR /app
+ADD . /app
+
+RUN pip install -r requirements.txt
+CMD ["waitress-serve","--port=5000", "msapi:app"]
