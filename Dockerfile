@@ -5,4 +5,4 @@ WORKDIR $APP_HOME
 COPY . ./
 RUN pip install -r requirements.txt
 EXPOSE 8080
-CMD exec waitress --listen "*:8080" "happy-api.wsgi:application"
+CMD exec waitress-serve --listen "*:8080" "happy-api.wsgi:application"
