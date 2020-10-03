@@ -5,4 +5,4 @@ WORKDIR $APP_HOME
 COPY . ./
 RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD exec waitress-serve --listen=*:5000 --url-scheme=https "app:api"
+CMD exec waitress-serve --listen=*:5000 app:api
