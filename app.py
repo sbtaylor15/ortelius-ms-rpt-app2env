@@ -20,11 +20,6 @@ DATA = {
          'barcelona']
 }
 
-@app.route('/')
-def places():
-    places = os.environ.get('PLACES')
-    return 'places'
-
 class Places(Resource):
     def get(self):
         # return our data and 200 OK HTTP code
