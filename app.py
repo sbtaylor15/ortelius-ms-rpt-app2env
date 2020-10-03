@@ -56,7 +56,7 @@ class Places(Resource):
                 }, 404
 
 @app.route('/places', methods=['POST','GET','DELETE'])
-    api.add_resource(Places, '/places')
+api.add_resource(Places, '/places')
 
 if __name__ == '__main__':
     if (os.getenv('FLASK_DEV_ENV', None) is not None):
