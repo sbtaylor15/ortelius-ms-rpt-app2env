@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from waitress import serve
-from app import app
+from app import api
 import os
 
 app = Flask(__name__)
