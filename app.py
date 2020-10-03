@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-from waitress import serve
+from waitress import serve, waitress
 import os
 
 app = Flask(__name__)
@@ -60,6 +60,6 @@ api.add_resource(Places, '/places')
 
 if __name__ == '__main__':
     if (os.getenv('FLASK_DEV_ENV', None) is not None):
-        app.run(app, debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+        waitress.serve(app, debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
     else:
         serve(app, host='0.0.0.0', port=5000)
