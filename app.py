@@ -55,7 +55,9 @@ class Places(Resource):
                 'message': f"'{args['location']}' does not exist."
                 }, 404
 
-api.add_resource(Places, '/places')
+api.add_resource(Places,
+    '/',
+    '/places')
 
 if __name__ == '__main__':
     if (os.getenv('FLASK_DEV_ENV', None) is not None):
