@@ -4,7 +4,7 @@ from waitress import serve
 import os
 
 app = Flask(__name__)
-api = Api.Api(app)
+api = Api(app)
 
 DATA = {
     'places':
