@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
 from waitress import serve
-from api import app
 import os
 
 app = Flask(__name__)
@@ -20,6 +19,11 @@ DATA = {
          'berlin',
          'barcelona']
 }
+
+@app.route('/')
+def places():
+    places = os.environ.get('PLACES')
+    return 'places'
 
 class Places(Resource):
     def get(self):
